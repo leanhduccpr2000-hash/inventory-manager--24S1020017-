@@ -1,12 +1,12 @@
-def add_product(name, price, quantity):
-    product = {'name': name, 'price': price, 'qty': quantity}
-    products.append(product)
-    print(f"Đã thêm sản phẩm: {product}")
+## Xem ton kho 
+def view_inventory():
+    if not products:
+        print("Kho hàng trống.")
+        return
+    print("\n===== DANH SÁCH SẢN PHẨM =====")
+    for idx, product in enumerate(products, start=1):
+        print(f"{idx}. {product['name']} - Giá: {product['price']} - Số lượng: {product['qty']}")
 
-# Cập nhật trong main()
-if choice == '1':
-    name = input("Nhập tên sản phẩm: ")
-    price = int(input("Nhập giá sản phẩm: "))
-    qty = int(input("Nhập số lượng tồn kho: "))
-    add_product(name, price, qty)
+
+
 
