@@ -1,11 +1,14 @@
-## Xem ton kho 
-def view_inventory():
-    if not products:
-        print("Kho hàng trống.")
+## canh bao nhap hang
+def check_low_stock():
+    low_stock_items = [p for p in products if p['qty'] < 5]
+    if not low_stock_items:
+        print("Không có sản phẩm sắp hết hàng.")
         return
-    print("\n===== DANH SÁCH SẢN PHẨM =====")
-    for idx, product in enumerate(products, start=1):
-        print(f"{idx}. {product['name']} - Giá: {product['price']} - Số lượng: {product['qty']}")
+    print("\n===== CẢNH BÁO HẾT HÀNG =====")
+    for product in low_stock_items:
+        print(f"{product['name']} - Số lượng: {product['qty']}")
+
+
 
 
 
